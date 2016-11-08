@@ -2,7 +2,7 @@
     "name": "jonnitto/smartlook",
     "type": "typo3-flow-plugin",
     "description": "Integrate smartlook.com into your Neos CMS Site",
-    "version": "0.1.1",
+    "version": "0.1.0",
     "license": "MIT",
     "keywords": ["smartlook", "tracking", "recording"],
     "authors": [
