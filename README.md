@@ -1,7 +1,7 @@
 Jonnitto.Smartlook
 ==================
 
-[![Latest Stable Version](https://poser.pugx.org/jonnitto/sitemap/v/stable)](https://packagist.org/packages/jonnitto/smartlook)
+[![Latest Stable Version](https://poser.pugx.org/jonnitto/smartlook/v/stable)](https://packagist.org/packages/jonnitto/smartlook)
 [![Total Downloads](https://poser.pugx.org/jonnitto/smartlook/downloads)](https://packagist.org/packages/jonnitto/smartlook)
 [![License](https://poser.pugx.org/jonnitto/smartlook/license)](https://packagist.org/packages/jonnitto/smartlook)
 
