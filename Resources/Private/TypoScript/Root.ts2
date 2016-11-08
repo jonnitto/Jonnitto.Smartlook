@@ -2,14 +2,32 @@ prototype(Jonnitto.Smartlook:Tag) < prototype(TYPO3.TypoScript:Tag) {
 	track = true
 	settings = ${Configuration.setting('Jonnitto.Smartlook')}
 	id = ${this.settings.Id}
-	javascript = ${String.replace(this.settings.Javascript, '{ID}', this.id)}
+
+	@context {
+		id = ${this.id}
+		track = ${this.track}
+		settings = ${this.settings}
+	}
+
+	javascript = TYPO3.TypoScript:Array {
+		track = ${String.replace(settings.Javascript, '{ID}', id)}
+		disable = ${track ? '' : settings.DisableScript}
+	}
 
 	@position = 'end'
-	@if.hasId = ${this.id && this.track ? true : false}
+	@if.hasId = ${this.id ? true : false}
 
 	tagName = 'script'
 	attributes.type = 'text/javascript'
 	content = ${this.javascript}
 }
 
-prototype(Page).head.smartlook = Jonnitto.Smartlook:Tag
+prototype(Page) {
+	head.smartlook = Jonnitto.Smartlook:Tag
+
+	// Ignore recording on forms
+	body.@process.smartlookForms = TYPO3.TypoScript:Value {
+		@if.ignoreForms = ${Configuration.setting('Jonnitto.Smartlook.ignoreForms')}
+		value = ${String.replace(value, '<form', '<form data-recording-ignore="mask"')}
+	}
+}
