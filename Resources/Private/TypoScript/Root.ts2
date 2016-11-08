@@ -1,0 +1,15 @@
+prototype(Jonnitto.Smartlook:Tag) < prototype(TYPO3.TypoScript:Tag) {
+	track = true
+	settings = ${Configuration.setting('Jonnitto.Smartlook')}
+	id = ${this.settings.Id}
+	javascript = ${String.replace(this.settings.Javascript, '{ID}', this.id)}
+
+	@position = 'end'
+	@if.hasId = ${this.id && this.track ? true : false}
+
+	tagName = 'script'
+	attributes.type = 'text/javascript'
+	content = ${this.javascript}
+}
+
+prototype(Page).head.smartlook = Jonnitto.Smartlook:Tag
