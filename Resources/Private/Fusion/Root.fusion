@@ -1,4 +1,4 @@
-prototype(Jonnitto.Smartlook:Tag) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Jonnitto.Smartlook:Tag) < prototype(Neos.Fusion:Tag) {
 	track = true
 	settings = ${Configuration.setting('Jonnitto.Smartlook')}
 	id = ${this.settings.Id}
@@ -9,7 +9,7 @@ prototype(Jonnitto.Smartlook:Tag) < prototype(TYPO3.TypoScript:Tag) {
 		settings = ${this.settings}
 	}
 
-	javascript = TYPO3.TypoScript:Array {
+	javascript = Neos.Fusion:Array {
 		track = ${String.replace(settings.Javascript, '{ID}', id)}
 		disable = ${track ? '' : settings.DisableScript}
 	}
@@ -26,7 +26,7 @@ prototype(Page) {
 	head.smartlook = Jonnitto.Smartlook:Tag
 
 	// Ignore recording on forms
-	body.@process.smartlookForms = TYPO3.TypoScript:Value {
+	body.@process.smartlookForms = Neos.Fusion:Value {
 		@if.ignoreForms = ${Configuration.setting('Jonnitto.Smartlook.ignoreForms')}
 		value = ${String.replace(value, '<form', '<form data-recording-ignore="mask"')}
 	}

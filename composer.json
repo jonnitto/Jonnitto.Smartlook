@@ -1,8 +1,7 @@
 {
     "name": "jonnitto/smartlook",
-    "type": "typo3-flow-plugin",
+    "type": "neos-plugin",
     "description": "Integrate smartlook.com into your Neos CMS Site",
-    "version": "0.1.0",
     "license": "MIT",
     "keywords": ["smartlook", "tracking", "recording"],
     "authors": [
@@ -14,11 +13,11 @@
         }
     ],
     "require": {
-        "typo3/neos": "2.*"
+        "neos/neos": "~3.0"
     },
     "autoload": {
-        "psr-0": {
-            "Jonnitto\\Smartlook": "Classes"
+        "psr-4": {
+            "Jonnitto\\Smartlook\\": "Classes"
         }
     },
     "extra": {
@@ -26,6 +25,9 @@
         "installer-name": "Jonnitto.Smartlook",
         "neos": {
             "package-key": "Jonnitto.Smartlook"
+        },
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
         }
     }
 }
