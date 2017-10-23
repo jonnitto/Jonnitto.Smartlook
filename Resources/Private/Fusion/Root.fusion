@@ -1,33 +1,31 @@
 prototype(Jonnitto.Smartlook:Tag) < prototype(Neos.Fusion:Tag) {
-	track = true
-	settings = ${Configuration.setting('Jonnitto.Smartlook')}
-	id = ${this.settings.Id}
+    track = true
+    settings = ${Configuration.setting('Jonnitto.Smartlook')}
+    id = ${this.settings.Id}
 
-	@context {
-		id = ${this.id}
-		track = ${this.track}
-		settings = ${this.settings}
-	}
+    @context {
+        id = ${this.id}
+        track = ${this.track}
+        settings = ${this.settings}
+    }
 
-	javascript = Neos.Fusion:Array {
-		track = ${String.replace(settings.Javascript, '{ID}', id)}
-		disable = ${track ? '' : settings.DisableScript}
-	}
+    @position = 'end'
+    @if.hasId = ${this.id ? true : false}
 
-	@position = 'end'
-	@if.hasId = ${this.id ? true : false}
-
-	tagName = 'script'
-	attributes.type = 'text/javascript'
-	content = ${this.javascript}
+    tagName = 'script'
+    attributes.type = 'text/javascript'
+    content = Neos.Fusion:Array {
+        track = ${String.replace(settings.Javascript, '{ID}', id)}
+        disable = ${track ? '' : settings.DisableScript}
+    }
 }
 
 prototype(Page) {
-	head.smartlook = Jonnitto.Smartlook:Tag
+    head.smartlook = Jonnitto.Smartlook:Tag
 
-	// Ignore recording on forms
-	body.@process.smartlookForms = Neos.Fusion:Value {
-		@if.ignoreForms = ${Configuration.setting('Jonnitto.Smartlook.ignoreForms')}
-		value = ${String.replace(value, '<form', '<form data-recording-ignore="mask"')}
-	}
+    // Ignore recording on forms
+    body.@process.smartlookForms = Neos.Fusion:Value {
+        @if.ignoreForms = ${Configuration.setting('Jonnitto.Smartlook.ignoreForms')}
+        value = ${String.replace(value, '<form', '<form data-recording-ignore="mask"')}
+    }
 }
