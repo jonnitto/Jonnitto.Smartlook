@@ -1,9 +1,14 @@
-Jonnitto.Smartlook
-==================
-
 [![Latest Stable Version](https://poser.pugx.org/jonnitto/smartlook/v/stable)](https://packagist.org/packages/jonnitto/smartlook)
 [![Total Downloads](https://poser.pugx.org/jonnitto/smartlook/downloads)](https://packagist.org/packages/jonnitto/smartlook)
-[![License](https://poser.pugx.org/jonnitto/smartlook/license)](https://packagist.org/packages/jonnitto/smartlook)
+[![License](https://poser.pugx.org/jonnitto/smartlook/license)](LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/jonnitto/Jonnitto.Smartlook.svg?style=social&label=Fork)](https://github.com/jonnitto/Jonnitto.Smartlook/fork)
+[![GitHub stars](https://img.shields.io/github/stars/jonnitto/Jonnitto.Smartlook.svg?style=social&label=Stars)](https://github.com/jonnitto/Jonnitto.Smartlook/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/jonnitto/Jonnitto.Smartlook.svg?style=social&label=Watch)](https://github.com/jonnitto/Jonnitto.Smartlook/subscription)
+[![GitHub followers](https://img.shields.io/github/followers/jonnitto.svg?style=social&label=Follow)](https://github.com/jonnitto/followers)
+[![Follow Jon on Twitter](https://img.shields.io/twitter/follow/jonnitto.svg?style=social&label=Follow)](https://twitter.com/jonnitto)
+
+Jonnitto.Smartlook
+==================
 
 Add [Smartlook](https://www.smartlook.com) to your [Neos CMS](https://www.neos.io) site:
 
@@ -24,7 +29,7 @@ Set id for recording
 
 You need to set the id on your `Settings.yaml` file:
 
-```
+```yaml
 Jonnitto:
   Smartlook:
     Id: 123456789012345678901234567890
@@ -37,7 +42,7 @@ Automatic handling of `forms`
 The plugin add automaticly `data-recording-ignore="mask"` to every `form` tag.
 This behavior can be disabled via `Settings.yaml`:
 
-```
+```yaml
 Jonnitto:
   Smartlook:
     ignoreForms: false
@@ -50,12 +55,12 @@ Disable recording on a certain page
 If you want to disable recording on a certain page you just set the variable
 `track` to false:
 
-```
+```js
 prototype(Page).head.smartlook.track = false
 ```
 
 or
-```
+```js
 renderPathPage.head.smartlook.track = false
 ```
 
