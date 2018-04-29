@@ -20,7 +20,7 @@ prototype(Jonnitto.Smartlook:Tag) < prototype(Neos.Fusion:Tag) {
     }
 }
 
-prototype(Page) {
+prototype(Neos.Neos:Page) {
     head.smartlook = Jonnitto.Smartlook:Tag
 
     // Ignore recording on forms
