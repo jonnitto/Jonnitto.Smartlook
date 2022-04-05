@@ -62,7 +62,3 @@ renderPathPage.head.smartlook.track = false;
 If this variable is set to false, `smartlook('disable',true);` is getting added
 to the tracking code. To disable the complete code on a page you can delete the
 complete tag like this: `prototype(Page).head.smartlook >`
-
-## License
-
-Licensed under MIT, see [LICENSE](LICENSE)

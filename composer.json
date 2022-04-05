@@ -2,13 +2,17 @@
     "name": "jonnitto/smartlook",
     "type": "neos-plugin",
     "description": "Integrate smartlook.com into your Neos CMS Site",
-    "license": "MIT",
-    "keywords": ["smartlook", "tracking", "recording"],
+    "license": "GPL-3.0",
+    "keywords": [
+        "smartlook",
+        "tracking",
+        "recording"
+    ],
     "authors": [
         {
             "name": "Jon Uhlmann",
-            "email": "me@jonnitto.ch",
-            "homepage": "https://twitter.com/jonnitto",
+            "email": "hello@uhlmann.pro",
+            "homepage": "https://www.uhlmann.pro",
             "role": "Developer"
         }
     ],
@@ -21,16 +25,18 @@
         }
     },
     "archive": {
-        "exclude": [".editorconfig", ".gitignore", ".github", ".gitattributes", "CODE_OF_CONDUCT.md"]
+        "exclude": [
+            ".editorconfig",
+            ".gitignore",
+            ".github",
+            ".gitattributes",
+            "CODE_OF_CONDUCT.md"
+        ]
     },
     "extra": {
-        "marketplace-account": "me@jonnitto.ch",
         "installer-name": "Jonnitto.Smartlook",
         "neos": {
             "package-key": "Jonnitto.Smartlook"
-        },
-        "branch-alias": {
-            "dev-master": "1.0.x-dev"
         }
     }
 }
