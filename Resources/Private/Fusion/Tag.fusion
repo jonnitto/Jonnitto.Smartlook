@@ -1,0 +1,16 @@
+prototype(Jonnitto.Smartlook:Tag) < prototype(Neos.Fusion:Component) {
+    track = true
+    settings = ${Configuration.setting('Jonnitto.Smartlook')}
+    id = ${this.settings.Id}
+
+    @if.hasId = ${this.id}
+
+    renderer = Neos.Fusion:Tag {
+        tagName = 'script'
+        attributes.type = 'text/javascript'
+        content = Neos.Fusion:Join {
+            track = ${String.replace(props.settings.Javascript, '{ID}', props.id)}
+            disable = ${props.track ? '' : props.settings.DisableScript}
+        }
+    }
+}

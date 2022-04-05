@@ -1,0 +1,8 @@
+prototype(Neos.Neos:Page) {
+    head.smartlook = Jonnitto.Smartlook:Tag {
+        @position = 'end'
+    }
+
+    // Ignore recording on forms
+    body.@process.smartlookForms = ${Configuration.setting('Jonnitto.Smartlook.ignoreForms') ? String.replace(value, '<form', '<form data-recording-ignore="mask"') : value}
+}
